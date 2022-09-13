@@ -42,7 +42,7 @@ while(<GFF>){
                         ($ust,$ued,$dst,$ded)=($dst,$ded,$ust,$ued);
                 }
                 if($_=~/protein_coding/){
-                        substr($fa{$inf[0]},$inf[3]-1,$inf[4]-$inf[3]+1)=~s/[AdDuUg]/I/g;
+                        substr($fa{$inf[0]},$inf[3]-1,$inf[4]-$inf[3]+1)=~s/[AdDuU]/I/g;
                         substr($fa{$inf[0]},$ust,$ued-$ust+1)=~s/[AdD]/U/g;
                         substr($fa{$inf[0]},$dst,$ded-$dst+1)=~s/[A]/D/g;
                 }

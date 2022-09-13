@@ -1,10 +1,10 @@
-wd=/jdfssz1/ST_HEALTH/P21Z10200N0047/zengyan/PAV/pangenie_populations/LD
-poplddecay=/jdfssz1/ST_HEALTH/P21Z10200N0047/zengyan/software/PopLDdecay/bin/PopLDdecay
+wd=/work_dir/1KGPselection/LD
+poplddecay=/work_dir/software/PopLDdecay/bin/PopLDdecay
 vcf=/hwfssz1/pub/database/ftp.1000genomes.ebi.ac.uk/vol1/ftp/data_collections/HGSVC2/release/v1.0/PanGenie_results/pangenie_merged_bi_all.vcf.gz
-sample_list=/jdfssz1/ST_HEALTH/P21Z10200N0047/zengyan/PAV/pangenie_populations/Population_struct/total_noX.samplre_order.meta
-contig_list=/jdfssz1/ST_HEALTH/P21Z10200N0047/zengyan/software/Google_data/primary_contigs.list
-Plot_OnePop=/jdfssz1/ST_HEALTH/P21Z10200N0047/zengyan/software/PopLDdecay/bin/Plot_OnePop.pl
-Plot_MultiPop=/jdfssz1/ST_HEALTH/P21Z10200N0047/zengyan/software/PopLDdecay/bin/Plot_MultiPop.pl
+sample_list=/work_dir/1KGPselection/non-SNV_selection/total_noX.samplre_order.meta
+contig_list=/work_dir/1KGPselection/LD/primary_contigs.list
+Plot_OnePop=/work_dir/software/PopLDdecay/bin/Plot_OnePop.pl
+Plot_MultiPop=/work_dir/software/PopLDdecay/bin/Plot_MultiPop.pl
 
 cd $wd
 
@@ -23,7 +23,7 @@ cd $wd
 
 #done
 
-continent=/jdfssz1/ST_HEALTH/P21Z10200N0047/zengyan/PAV/pangenie_populations/LD/sample_order.contcontinent.meta
+continent=/work_dir/1KGPselection/LD/sample_order.contcontinent.meta
 
 awk '{print $4}' $continent | sort -u | while read subpop;do
 

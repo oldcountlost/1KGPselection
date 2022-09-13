@@ -1,6 +1,5 @@
 wd=$(pwd)
 k=10
-R=/jdfssz1/ST_HEALTH/P21Z10200N0047/zengyan/software/Anaconda2/2.5.3/envs/gatk2/bin/R  
 
 
 for c in {1..10}; do

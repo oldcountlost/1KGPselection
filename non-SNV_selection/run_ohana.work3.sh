@@ -1,8 +1,7 @@
 
-wd=/jdfssz1/ST_HEALTH/P21Z10200N0047/zengyan/PAV/pangenie_populations/Population_struct
+wd=/work_dir/1KGPselection/non-SNV_selection
 
-chrs=/jdfssz1/ST_HEALTH/P21Z10200N0047/zengyan/SW_selection/ohana/chrs.txt
-vcf=/jdfssz1/ST_HEALTH/P21Z10200N0047/zengyan/PAV/pangenie_populations/SV/out.Maf1Percetn.vcf.recode.vcf
+vcf=/work_dir/1KGPselection/SV/out.Maf1Percetn.vcf.recode.vcf
 fai=/ldfssz1/ST_BIGDATA/USER/st_bigdata/Sentieon/reference_bigdatacompute/hg38_noalt_withrandom/hg38.fa.fai
 
 
@@ -23,7 +22,6 @@ out_sel="$wd/sel${k}_${chr}_${st}_$ed"
 out="$wd/all${chr}_${st}_${ed}"
 
 cat > qsub$k.$chr.$st.$ed.sh << EOF
-source  /jdfssz1/ST_HEALTH/P21Z10200N0047/zengyan/software/ohana/bin/load.sh
 cd $wd
 qpas  $out.g.dgm -e 0.0001  -qi  $One_percent_Q -fo  $out_sel.f.matrix  -fq
 selscan $out.g.dgm  $out_sel.f.matrix  $One_percent_C   > $out_sel.lle-ratios.txt  ##  default 10 times the C matrix
@@ -41,7 +39,6 @@ out_sel="$wd/sel${k}_${c}_${chr}_${st}_${ed}"
 out="$wd/all${chr}_${st}_${ed}"
 
 cat > qsub$k.$c.$chr.$st.$ed.sh << EOF
-source  /jdfssz1/ST_HEALTH/P21Z10200N0047/zengyan/software/ohana/bin/load.sh
 cd $wd
 qpas  $out.g.dgm -e 0.0001  -qi  $One_percent_Q -fo  $out_sel.f.matrix  -fq
 selscan $out.g.dgm  $out_sel.f.matrix  $One_percent_C   -cs $One_percent_C2   > $out_sel.lle-ratios.txt
@@ -71,7 +68,6 @@ out_sel="$wd/sel$k\_$One_percent_C2\_$chr\_$st\_$ed"
 out="$wd/all$chr\_$st\_$ed"
 
 cat > qsub$k.$One_percent_C2.$chr.$st.$ed.sh << EOF
-source  /jdfssz1/ST_HEALTH/P21Z10200N0047/zengyan/software/ohana/bin/load.sh
 cd $wd
 #qpas  $out.g.dgm -e 0.0001  -qi  $One_percent_Q -fo  $out_sel.f.matrix  -fq
 selscan $out.g.dgm  $out_sel.f.matrix  $One_percent_C   -cs $One_percent_C2   > $out_sel.lle-ratios.txt

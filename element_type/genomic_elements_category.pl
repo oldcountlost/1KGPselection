@@ -19,7 +19,6 @@ close FA;
 
 print "fa done\n";
 
-
 my $gene_count=0;
 my $line_count=0;
 open GFF, $gff or die $!;
